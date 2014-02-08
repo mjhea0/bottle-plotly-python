@@ -32,7 +32,7 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
   $ pip install -r requirements.txt
   ```
        
-4. Navigate to [https://www.plot.ly/api](https://www.plot.ly/api), sign up for a new account, sign in, and then create a new API key. 
+4. Navigate to [https://www.plot.ly/api](https://www.plot.ly/api), sign up for a new account, sign in, and then create a new API key:
 
   ![plotly_api](https://raw.github.com/mjhea0/bottle-plotly-python/master/images/plotly.png)
 
@@ -88,9 +88,9 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
       run(host='0.0.0.0', port=port, debug=True)
   ```
     
-    ### What's going on here?
+  ### What's going on here?
 
-    The first function, `form()`, creates an HTML form for capturing the data we need to make a simple bar graph. Meanwhile, the second function, `submit()`, grabs the form inputs, assigns them to variables, then calls the plot.ly (passing our credentials as well as the data) API to generate a new chart. *Make sure you replace my username and API key vwith your own credentials. DO NOT use mine. It will not work.*
+  The first function, `form()`, creates an HTML form for capturing the data we need to make a simple bar graph. Meanwhile, the second function, `submit()`, grabs the form inputs, assigns them to variables, then calls the plot.ly (passing our credentials as well as the data) API to generate a new chart. *Make sure you replace my username and API key vwith your own credentials. DO NOT use mine. It will not work.*
     
 7. Run your app locally, `python app.py`, and go to [http://localhost:8080/plot](http://localhost:8080/plot).
 
