@@ -104,11 +104,15 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
  
     ![cohort](http://content.screencast.com/users/Mike_Extentech/folders/Jing/media/50d185f0-ea48-488d-84bc-a466dd7aca68/00000203.png)
     
-    See if you can solve this on your own. If you get stuck, you can view my code [here](https://gist.github.com/mjhea0/5985460). The final graph should look like this: 
+    See if you can solve this on your own. If you get stuck, you can view my code below. The final graph should look like this: 
     
     ![cohort_graph](http://content.screencast.com/users/Mike_Extentech/folders/Jing/media/b9097a74-9673-4a58-b51c-4085365cb145/00000204.png)
+
+    Try it!
     
 2. How could you make the form easier to use? What if you wanted to make it dynamic? In other words, what if you don't know the number of years to begin with?
+
+## Cohort Analysis
 
 See you next time!
  
