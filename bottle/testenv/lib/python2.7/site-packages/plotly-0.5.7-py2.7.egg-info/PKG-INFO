@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: plotly
+Version: 0.5.7
+Summary: UNKNOWN
+Home-page: https://plot.ly/api/python
+Author: Chris P
+Author-email: chris@plot.ly
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Topic :: Scientific/Engineering :: Visualization
