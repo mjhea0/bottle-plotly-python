@@ -1,9 +1,4 @@
----
-title: Developing with Bottle - part 2 (plot.ly API)
-date: 'July 12, 2013'
-description: bottle.py, python, web development, plot.ly, cohort analysis
-categories: python
----
+# Developing with Bottle - part 2 (plot.ly API)
 
 **Updated on 02/08/2014!**
 
