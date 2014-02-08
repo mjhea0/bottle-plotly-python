@@ -4,7 +4,7 @@
 
 In this next post in the *Developing with Bottle* series, we'll be looking at both GET and POST requests as well as HTML forms. I'll also show you how to consume data from the [plot.ly](https://plot.ly/api) API. You'll also get to see how to create a cool graph showing the results of a cohort analysis study. (Click [here](http://mherman.org/blog/2012/11/16/the-benefits-of-performing-a-cohort-analysis-in-determining-engagement-over-time/) if you are unfamiliar with cohort analysis.)
 
-> Did you miss the first part? Check it out here [here](http://www.realpython.com/blog/python/developing-with-bottle-part-1/)t.
+> Did you miss the first part? Check it out here [here](http://www.realpython.com/blog/python/developing-with-bottle-part-1/).
 
 ## Basic Setup
 
