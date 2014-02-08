@@ -90,13 +90,13 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
     
   ### What's going on here?
 
-  The first function, `form()`, creates an HTML form for capturing the data we need to make a simple bar graph. Meanwhile, the second function, `submit()`, grabs the form inputs, assigns them to variables, then calls the plot.ly (passing our credentials as well as the data) API to generate a new chart. *Make sure you replace my username and API key vwith your own credentials. DO NOT use mine. It will not work.*
+  The first function, `form()`, creates an HTML form for capturing the data we need to make a simple bar graph. Meanwhile, the second function, `submit()`, grabs the form inputs, assigns them to variables, then calls the plot.ly (passing our credentials as well as the data) API to generate a new chart. *Make sure you replace my username and API key with your own credentials. DO NOT use mine. It will not work.*
     
-7. Run your app locally, `python app.py`, and go to [http://localhost:8080/plot](http://localhost:8080/plot).
+7. Run your app locally, `python app.py`, and point your browser to [http://localhost:8080/plot](http://localhost:8080/plot).
 
 8. Enter the names of three people and their respective ages. Press submit, and then if all is well you should see a congrats message and a URL. Click the URL to view your graph:
 
-    ![graph](http://content.screencast.com/users/Mike_Extentech/folders/Jing/media/507d04e6-8352-4882-910e-9d04da054266/00000199.png)
+    ![ages](https://raw.github.com/mjhea0/bottle-plotly-python/master/images/ages.png)
     
 ## Next Steps
 
