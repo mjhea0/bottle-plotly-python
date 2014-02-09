@@ -180,7 +180,7 @@ We'll be building off of *app.py*. Open the file and "Save As" *cohort.py*.
   </html>
   ```
 
-  As you can probably tell, this looks just like an HTML file. The difference is that we can pass Python variables to the file using the syntax - `{{ python_variable }}`. Also, did you notice the iframe? This will allow us to update the form then display the actual content/form, with the update changes, below. Now, we do not have to leave the site to view the graph.
+  As you can probably tell, this looks just like an HTML file. The difference is that we can pass Python variables to the file using the syntax - `{{ python_variable }}`. Also, did you notice the iframe? This will allow us to update the form then display the actual content/chart, with the update changes, below. Now, we do not have to leave the site to view the graph.
 
 2. Update the imports:
   ```python
