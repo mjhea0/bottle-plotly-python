@@ -102,7 +102,9 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
 
 1. Try to create a form for a more complicated graph. For example, I developed the code necessary to create a chart for the following results of a cohort analysis study:
  
-    ![cohort](http://content.screencast.com/users/Mike_Extentech/folders/Jing/media/50d185f0-ea48-488d-84bc-a466dd7aca68/00000203.png)
+    Cohort | 2011 | 2012 | 2013 | 2014
+    ------ | ---- | ---- | ---- | ----
+       0   |  310 |  348 | 228  |  250 
     
     See if you can solve this on your own. If you get stuck, you can view my code below. The final graph should look like this: 
     
