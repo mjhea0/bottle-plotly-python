@@ -111,7 +111,7 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
     
     See if you can solve this on your own. If you get stuck, you can view my code below. The final graph should look like this: 
     
-    ![cohort_graph](http://content.screencast.com/users/Mike_Extentech/folders/Jing/media/b9097a74-9673-4a58-b51c-4085365cb145/00000204.png)
+    ![cohort_graph](https://raw.github.com/mjhea0/bottle-plotly-python/master/images/plot_from_api.png)
 
     Try it!
     
