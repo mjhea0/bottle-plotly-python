@@ -104,7 +104,8 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
  
     Cohort | 2011 | 2012 | 2013 | 2014
     ------ | ---- | ---- | ---- | ----
-       0   |  310 |  348 | 228  |  250 
+       0   |  310 |  348 | 228  | 250 
+       1   |  55  |  157 | 73   | 105 
     
     See if you can solve this on your own. If you get stuck, you can view my code below. The final graph should look like this: 
     
