@@ -239,7 +239,7 @@ We'll be building off of *app.py*. Open the file and "Save As" *cohort.py*.
       response = py.plot(x0, y0, x1, y1, x2, y2, x3, y3, filename='same plot', fileopt='overwrite')
       url = response['url']
       filename = response['filename']
-      return template('template', title='Plot.ly Graph', content=url)
+      return template('template', title='Plot.ly Graph')
   ```
 
   Notice the `return` statment. We're passing in the name of the template, plus any variables. Go back to the actual template. See how the variables match up.
