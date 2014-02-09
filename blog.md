@@ -119,6 +119,8 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
 
 ## Cohort Analysis
 
+## Conclusion
+
 See you next time!
  
 
