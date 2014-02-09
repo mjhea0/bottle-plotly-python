@@ -259,6 +259,8 @@ We'll be building off of *app.py*. Open the file and "Save As" *cohort.py*.
 
 ## Conclusion
 
+Grab all the files from this [repo](https://github.com/mjhea0/bottle-plotly-python).
+
 See you next time!
  
 
