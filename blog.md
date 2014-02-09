@@ -244,7 +244,7 @@ We'll be building off of *app.py*. Open the file and "Save As" *cohort.py*.
 
   Notice the `return` statment. We're passing in the name of the template, plus any variables. Go back to the actual template. See how the variables match up.
 
-  Also, take a look at the update API call - `response = py.plot(x0, y0, x1, y1, x2, y2, x3, y3, filename='same plot', fileopt='overwrite')`. You can read more about what this call does [here](https://plot.ly/api/python/docs/add-append-extend).
+  Also, take a look at the updated API call - `response = py.plot(x0, y0, x1, y1, x2, y2, x3, y3, filename='same plot', fileopt='overwrite')`. You can read more about what this call does [here](https://plot.ly/api/python/docs/add-append-extend).
 
 6. Run it. Add values to the form. Just enter dummy data for now (all '1s' for example). Then submit. Navigate to [https://plot.ly/plot](https://plot.ly/plot). Grab the url of the latest graph. The name will be "same plot". Paste that URL into the template:
   ```html
