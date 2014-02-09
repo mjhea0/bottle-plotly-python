@@ -1,50 +1,21 @@
 import os
-from bottle import run, template, get, post, request
+from bottle import run, template, get, post, request, \
+    route, run, static_file, template, view 
 from plotly import plotly
+import json
  
-# add your username and api key
-py = plotly("realpython", "5q9mp6exnd")
+# grab username and key from config/data file
+with open('data.json') as config_file:    
+    config_data = json.load(config_file)
+username = config_data["user"]
+key = config_data["key"]
+
+py = plotly(username, key)
+
  
 @get('/plot')
 def form():
-    return '''<h2>Graph via Plot.ly</h2>
-              <form method="POST" action="/plot">
-              <table>
-                <tr>
-                <td>
-                <h3><center>Year 1</center></h3>
-                Cohort 0: <input name="Y01" type="number"/><br/>
-                Cohort 1: <input name="Y02" type="number"/><br/>
-                Cohort 2: <input name="Y03" type="number"/><br/>
-                Cohort 3: <input name="Y04" type="number"/><br/>
-                </td>
-                <td>
-                <h3>Year 2</h3>                
-                <input name="Y11" type="number"/><br/>
-                <input name="Y12" type="number"/><br/>
-                <input name="Y13" type="number"/><br/>
-                <input name="Y14" type="number"/><br/>
-                </td> 
-                <td>
-                <h3>Year 3</h3>                
-                <input name="Y21" type="number"/><br/>
-                <input name="Y22" type="number"/><br/>
-                <input name="Y23" type="number"/><br/>
-                <input name="Y24" type="number"/><br/>
-                </td>
-                <td>
-                <h3>Year 4</h3>                
-                <input name="Y31" type="number"/><br/>
-                <input name="Y32" type="number"/><br/>
-                <input name="Y33" type="number"/><br/>
-                <input name="Y34" type="number"/><br/>
-                </td>
-                <td>
-                </td>  
-                </tr>
-              </table>  
-               <input type="submit"/>                        
-              </form>'''
+    return template('template', title='Plot.ly Graph')
  
 @post('/plot')
 def submit():
@@ -72,11 +43,10 @@ def submit():
     x1 = [1,2,3,4]; y1 = [Y11,Y12,Y13,Y14] 
     x2 = [1,2,3,4]; y2 = [Y21,Y22,Y23,Y24]
     x3 = [1,2,3,4]; y3 = [Y31,Y32,Y33,Y34]
-    response = py.plot(x0, y0, x1, y1, x2, y2, x3, y3)
+    response = py.plot(x0, y0, x1, y1, x2, y2, x3, y3, filename='same plot', fileopt='overwrite')
     url = response['url']
     filename = response['filename']
-    return template('<h1>Congrats!</h1><div>View your chart here: \
-        <a href="{{url}}">{{url}}</a>!</div>', url=url)
+    return template('template', title='Plot.ly Graph')
  
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))

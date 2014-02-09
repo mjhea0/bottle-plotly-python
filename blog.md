@@ -108,10 +108,154 @@ Next, let's a more complicated graph to create a graph for the following cohort 
        1   |  55  |  157 | 73   | 105
        2   |  18  |  37  | 33   |  34
        3   |  2   |  4   | 4    |  3
-    
 
+We'll be building off of *app.py*. Open the file and "Save As" cohort.py.
+   
+1. Start by upgrading to the [Simple Template Engine](http://bottlepy.org/docs/dev/stpl.html), so we can add styles and Javascript files to our templates. Add a new folder called "views" then create a new file in that directory called *template.tpl*. Add the following code to that file:
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>{{ title }}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+      <style>
+        body {
+          padding: 60px 0px;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>Graph via Plot.ly</h1>
+        <form role="form" method="post" action="/plot">
+          <table>
+              <td>
+                <h3>2011</h3>
+                <div class="form-group" "col-md-2">
+                  <input type="number" name="Y01" class="form-control">
+                  <input type="number" name="Y02" class="form-control">
+                  <input type="number" name="Y03" class="form-control">
+                  <input type="number" name="Y04" class="form-control">
+                </div>
+              </td>
+              <td>
+                <h3>2012</h3>
+                <div class="form-group" "col-md-2">
+                  <input type="number" name="Y11" class="form-control">
+                  <input type="number" name="Y12" class="form-control">
+                  <input type="number" name="Y13" class="form-control">
+                  <input type="number" name="Y44" class="form-control">
+                </div>
+              </td>
+              <td>
+                <h3>2013</h3>
+                <div class="form-group" "col-md-2">
+                  <input type="number" name="Y21" class="form-control">
+                  <input type="number" name="Y22" class="form-control">
+                  <input type="number" name="Y23" class="form-control">
+                  <input type="number" name="Y24" class="form-control">
+                </div>
+              </td>
+              <td>
+                <h3>2014</h3>
+                <div class="form-group" "col-md-2">
+                  <input type="number" name="Y31" class="form-control">
+                  <input type="number" name="Y32" class="form-control">
+                  <input type="number" name="Y33" class="form-control">
+                  <input type="number" name="Y34" class="form-control">
+                </div>
+              </td>
+            </tr>
+          </table>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <br>
+        <iframe id="igraph" src="" width="900" height="450" seamless="seamless" scrolling="no"></iframe>
+      </div>
+      <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    </body>
+  </html>
+  ```
 
+  As you can probably tell, this looks just like an HTML file. We are able to pass Python variables to the file using the syntax - `{{ python_variable }}`. Also, did you notice the iframe? This will allow us to update the form then display the actual content/form, with the update changes, below. Now, we do not have to leave the site to view the graph.
 
+2. Update the imports:
+  ```python
+  import os
+  from bottle import run, template, get, post, request, \
+      route, run, static_file, template, view 
+  from plotly import plotly
+  import json
+  ```
+
+3. Create a *data.json* file and add your Plot.ly username and API key. You can view the sample file [here](https://github.com/mjhea0/bottle-plotly-python/blob/master/bottle/data_sample.json).
+
+4. Add the following code to access the *data.json* file in order to add the values to make the API call:
+  ```python
+  # grab username and key from config/data file
+  with open('data.json') as config_file:    
+      config_data = json.load(config_file)
+  username = config_data["user"]
+  key = config_data["key"]
+
+  py = plotly(username, key)
+  ```
+
+5. Next update the functions:
+  ```python
+  @get('/plot')
+  def form():
+      return template('template', title='Plot.ly Graph')
+   
+  @post('/plot')
+  def submit():
+      Y01 = request.forms.get('Y01')
+      Y02 = request.forms.get('Y02')
+      Y03 = request.forms.get('Y03')
+      Y04 = request.forms.get('Y04')
+   
+      Y11 = request.forms.get('Y11')
+      Y12 = request.forms.get('Y12')
+      Y13 = request.forms.get('Y13')
+      Y14 = request.forms.get('Y14')
+   
+      Y21 = request.forms.get('Y21')
+      Y22 = request.forms.get('Y22')
+      Y23 = request.forms.get('Y23')
+      Y24 = request.forms.get('Y24')
+   
+      Y31 = request.forms.get('Y31')
+      Y32 = request.forms.get('Y32')
+      Y33 = request.forms.get('Y33')
+      Y34 = request.forms.get('Y34')
+   
+      x0 = [1,2,3,4]; y0 = [Y01,Y02,Y03,Y04]
+      x1 = [1,2,3,4]; y1 = [Y11,Y12,Y13,Y14] 
+      x2 = [1,2,3,4]; y2 = [Y21,Y22,Y23,Y24]
+      x3 = [1,2,3,4]; y3 = [Y31,Y32,Y33,Y34]
+      response = py.plot(x0, y0, x1, y1, x2, y2, x3, y3, filename='same plot', fileopt='overwrite')
+      url = response['url']
+      filename = response['filename']
+      return template('template', title='Plot.ly Graph', content=url)
+  ```
+
+  Notice the `return` statment. We're passing in the name of the template, plus any variables. Go back to the actual template. See how the variables match up.
+
+  Also, take a look at the update API call - `response = py.plot(x0, y0, x1, y1, x2, y2, x3, y3, filename='same plot', fileopt='overwrite')`. You can read more about what this call does [here](https://plot.ly/api/python/docs/add-append-extend).
+
+6. Run it. Add values to the form. Just enter dummy data for now (all '1s' for example). Then submit. Navigate to [https://plot.ly/plot](https://plot.ly/plot). Grab the url of the latest graph. The name will be "same plot". Paste that URL into the template:
+  ```html
+  <iframe id="igraph" src="https://plot.ly/~realpython/19" width="900" height="450" seamless="seamless" scrolling="no"></iframe>
+  ```
+
+7. Kill the server. Fire it back up. Navigate to [http://localhost:8080/plot](http://localhost:8080/plot) and you should see the graph.
+
+8. Now enter the real data. Submit. Your graph should now look like this:
+
+  ![final](https://raw.github.com/mjhea0/bottle-plotly-python/master/images/final.png)
 
 ## Conclusion
 
