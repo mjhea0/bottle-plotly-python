@@ -1,2 +1,3 @@
 *.pyc
 testenv
+data.json

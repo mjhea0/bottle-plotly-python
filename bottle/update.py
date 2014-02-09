@@ -4,8 +4,8 @@ from bottle import run, template, get, post, request, \
 from plotly import plotly
 import json
 
-# grab username and key from config file
-with open('config.json') as config_file:    
+# grab username and key from config/data file
+with open('data.json') as config_file:    
     config_data = json.load(config_file)
 username = config_data["user"]
 key = config_data["key"]
@@ -14,7 +14,7 @@ py = plotly(username, key)
  
 @get('/plot')
 def form():
-    return template('starter', title='start basic page')
+    return template('starter', title='Plot.ly Graph')
  
 @post('/plot')
 def submit():
@@ -45,8 +45,8 @@ def submit():
     response = py.plot(x0, y0, x1, y1, x2, y2, x3, y3, filename='same plot', fileopt='overwrite')
     url = response['url']
     filename = response['filename']
-    return template('starter', title='start basic page', content=url)
-
+    return template('starter', title='Plot.ly Graph', content=url)
+ 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
-    run(server='gevent', port=os.environ.get('PORT', 5000))
+    run(host='0.0.0.0', port=port, debug=True)

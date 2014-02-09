@@ -94,13 +94,13 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
     
 7. Run your app locally, `python app.py`, and point your browser to [http://localhost:8080/plot](http://localhost:8080/plot).
 
-8. Enter the names of three people and their respective ages. Press submit, and then if all is well you should see a congrats message and a URL. Click the URL to view your graph:
+8. Enter the names of three people and their respective ages. Press submit, and  then if all is well you should see a congrats message and a URL. Click the URL to view your graph:
 
     ![ages](https://raw.github.com/mjhea0/bottle-plotly-python/master/images/ages.png)
     
-## Next Steps
+## Cohort Analysis
 
-1. Try to create a form for a more complicated graph. For example, I developed the code necessary to create a chart for the following results of a cohort analysis study:
+Next, let's a more complicated graph to create a graph for the following cohort analysis stats:
  
     Cohort | 2011 | 2012 | 2013 | 2014
     ------ | ---- | ---- | ---- | ----
@@ -109,15 +109,9 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
        2   |  18  |  37  | 33   |  34
        3   |  2   |  4   | 4    |  3
     
-    See if you can solve this on your own. If you get stuck, you can view my code below. The final graph should look like this: 
-    
-    ![cohort_graph](https://raw.github.com/mjhea0/bottle-plotly-python/master/images/plot_from_api.png)
 
-    Try it!
-    
-2. How could you make the form easier to use? What if you wanted to make it dynamic? In other words, what if you don't know the number of years to begin with?
 
-## Cohort Analysis
+
 
 ## Conclusion
 
