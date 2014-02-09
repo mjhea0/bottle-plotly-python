@@ -109,7 +109,7 @@ Next, let's a more complicated graph to create a graph for the following cohort 
        2   |  18  |  37  | 33   |  34
        3   |  2   |  4   | 4    |  3
 
-We'll be building off of *app.py*. Open the file and "Save As" cohort.py.
+We'll be building off of *app.py*. Open the file and "Save As" *cohort.py*.
    
 1. Start by upgrading to the [Simple Template Engine](http://bottlepy.org/docs/dev/stpl.html), so we can add styles and Javascript files to our templates. Add a new folder called "views" then create a new file in that directory called *template.tpl*. Add the following code to that file:
   ```html
