@@ -50,7 +50,7 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
   from plotly import plotly
 
   # add your username and api key
-  py = plotly("realpython", "5q9mp6exnd")
+  py = plotly("realpython", "5q9mp7exnd")
 
   @get('/plot')
   def form():
