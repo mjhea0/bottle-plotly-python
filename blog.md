@@ -96,7 +96,9 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
 
 8. Enter the names of three people and their respective ages. Press submit, and  then if all is well you should see a congrats message and a URL. Click the URL to view your graph:
 
-    ![ages](https://raw.github.com/mjhea0/bottle-plotly-python/master/images/ages.png)
+  ![ages](https://raw.github.com/mjhea0/bottle-plotly-python/master/images/ages.png)
+
+  If you see this error - `Aw, snap! Looks like you supplied the wrong API key. Want to try again? You can always view your key at https://plot.ly/api/key. When you display your key at https://plot.ly/api/key, make sure that you're logged in as realpython.` - you need to update your API key.
     
 ## Cohort Analysis
 
