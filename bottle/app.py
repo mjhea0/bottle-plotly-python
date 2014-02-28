@@ -3,7 +3,7 @@ from bottle import run, template, get, post, request
 from plotly import plotly
 
 # add your username and api key
-py = plotly("realpython", "5q9mp7exnd")
+py = plotly("realpython", "5q9mp6exnd")
 
 @get('/plot')
 def form():
