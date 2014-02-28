@@ -100,7 +100,7 @@ In this next post in the *Developing with Bottle* series, we'll be looking at bo
     
 ## Cohort Analysis
 
-Next, let's a more complicated graph to create a graph for the following cohort analysis stats:
+Next, let's look at a more complicated graph to create a graph for the following cohort analysis stats:
  
     Cohort | 2011 | 2012 | 2013 | 2014
     ------ | ---- | ---- | ---- | ----
