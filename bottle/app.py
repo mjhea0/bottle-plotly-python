@@ -5,7 +5,7 @@ import plotly.plotly as py
 from plotly.graph_objs import *
 
 # add your username and api key
-py.sign_in("realpython", "5q9mp6exnd")
+py.sign_in(username, apiKey)
 
 
 @get('/plot')
